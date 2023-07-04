@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-    label 'jenkins'
-  }
+  agent any
   stages {
     stage('install') {
       steps{
@@ -14,7 +12,7 @@ pipeline {
         sh "npm run build"
       }
     }
-stage('SonarQube analysis') 
+stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     echo 'Scanning'
