@@ -14,12 +14,7 @@ pipeline {
         sh "npm run build"
       }
     }
-stage('SonarQube analysis') {
-            when {
-                anyOf {
-                    branch 'main'
-                }
-            }
+stage('SonarQube analysis') 
             steps {
                 withSonarQubeEnv('sonarqube') {
                     echo 'Scanning'
