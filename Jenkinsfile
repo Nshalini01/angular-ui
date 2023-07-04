@@ -16,7 +16,7 @@ stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     echo 'Scanning'
-                    sh 'mvn sonar:sonar'
+                    sh 'npm sonar:sonar'
                 }
             }
         }
